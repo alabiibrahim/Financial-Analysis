@@ -119,28 +119,79 @@ Developed a comprehensive Bank Loan Intelligence System that analyzes over $435M
 
 ## Data Transformation
 
-Here are the DAX formulas used in this project:
+Here are the Key DAX formulas used in this project:
 
-- Sales = SUM('Fact'[Sales_USD])
-        - This measure total all sales values from the Fact table.  
+- Applications = 
+VAR FilterState = [Loan Quality_Filter]
+RETURN
+CALCULATE(
+    COUNT(financial_loan[Id]),
+    FILTER(
+    financial_loan,
+        FilterState = 0 ||
+        (FilterState = 1 && financial_loan[Loan Quality] = "Good") ||
+        (FilterState = 2 && financial_loan[Loan Quality] = "Bad")
+    )
+)
+        - This measure count all loans applications.  
 
-- Qty = SUM('Fact'[Quantity])
-        - This measure total all quantity from the Fact table.
+- Funded  = 
+VAR FilterState = [Loan Quality_Filter]
+RETURN
+CALCULATE(
+    SUM(financial_loan[Loan_Amount]),
+    FILTER(
+    financial_loan,
+        FilterState = 0 ||
+        (FilterState = 1 && financial_loan[Loan Quality] = "Good") ||
+        (FilterState = 2 && financial_loan[Loan Quality] = "Bad")
+    )
+)
+        - This measure total all funded amount. 
 
-- COGs = SUM('Fact'[COGS_USD])
-        - This measure total the Cost of Good sold from the Fact table  
+- Received = 
+VAR FilterState = [Loan Quality_Filter]
+RETURN
+CALCULATE(
+    SUM(financial_loan[Total_Payment]),
+    FILTER(
+    financial_loan,
+        FilterState = 0 ||
+        (FilterState = 1 && financial_loan[Loan Quality] = "Good") ||
+        (FilterState = 2 && financial_loan[Loan Quality] = "Bad")
+    )
+)
+        - This measure sums the payment from loan borrowers.
 
-- GrossProfit = COGs - Sales
-        - This measure subtract the COGs from Sales to get the Gross Profit.
+- Avg Int = 
+VAR FilterState = [Loan Quality_Filter]
+RETURN
+CALCULATE(
+    AVERAGE(financial_loan[Int_Rate]),
+    FILTER(
+    financial_loan,
+        FilterState = 0 ||
+        (FilterState = 1 && financial_loan[Loan Quality] = "Good") ||
+        (FilterState = 2 && financial_loan[Loan Quality] = "Bad")
+    )
+)
+        - This measure is used to calculate the AVG Int Rate
 
-- YTD Sales = TOTALYTD('Measures'[Sales], 'Calendar'[Date]) 
-        - This measure is used to calculate the YTD sales, quantity, and gross profit from the start of the year to the end. 
+- Avg DTI = 
+VAR FilterState = [Loan Quality_Filter]
+RETURN
+CALCULATE(
+    AVERAGE(financial_loan[DTI]),
+    FILTER(
+    financial_loan,
+        FilterState = 0 ||
+        (FilterState = 1 && financial_loan[Loan Quality] = "Good") ||
+        (FilterState = 2 && financial_loan[Loan Quality] = "Bad")
+    )
+)
 
-- PYTD Sales = CALCULATE([YTDSales], SAMEPERIODLASTYEAR('Calendar'[Date]))
-      - This measure is used to calculate the YoY comparison of sales, quantity, and gross profit. Just as seen in the waterfall chart.
+  - This measure is used to calculate the AVG DTI 
 
-- GP% = DIVIDE([GrossProfit], [Sales])
-        - This measure is used to calculate the GP %. 
 
 
 ## Findings
