@@ -1,4 +1,4 @@
-# Financial-Analysis
+# Financial Loan Analysis 2021
 
 ![GIF](Images/FinGIF.gif)
 
