@@ -8,7 +8,6 @@
 ##   Table of Contents
 
 - [Project brief](#Projectbrief)
-- [Data Architecture](#DataArchitecture)
 - [Questions](#Questions)
 - [Data source](#Datasource)
 - [Tools](#Tools)
@@ -133,7 +132,8 @@ CALCULATE(
         (FilterState = 2 && financial_loan[Loan Quality] = "Bad")
     )
 )
-        - This measure count all loans applications.  
+
+   - This measure count all loans applications.  
 
 - Funded  = 
 VAR FilterState = [Loan Quality_Filter]
@@ -147,7 +147,8 @@ CALCULATE(
         (FilterState = 2 && financial_loan[Loan Quality] = "Bad")
     )
 )
-        - This measure total all funded amount. 
+
+   - This measure total all funded amount. 
 
 - Received = 
 VAR FilterState = [Loan Quality_Filter]
@@ -161,7 +162,8 @@ CALCULATE(
         (FilterState = 2 && financial_loan[Loan Quality] = "Bad")
     )
 )
-        - This measure sums the payment from loan borrowers.
+
+   - This measure sums the payment from loan borrowers.
 
 - Avg Int = 
 VAR FilterState = [Loan Quality_Filter]
@@ -175,7 +177,8 @@ CALCULATE(
         (FilterState = 2 && financial_loan[Loan Quality] = "Bad")
     )
 )
-        - This measure is used to calculate the AVG Int Rate
+
+   - This measure is used to calculate the AVG Int Rate
 
 - Avg DTI = 
 VAR FilterState = [Loan Quality_Filter]
