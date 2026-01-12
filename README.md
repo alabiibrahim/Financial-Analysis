@@ -115,11 +115,11 @@ This project is built on a Star Schema architecture, optimized for analytical pe
  
  This dashboard allows the Sales Director to pivot from 'General Observation' to 'Targeted Action' for example, specifically investigating the November slump or renegotiating low-margin accounts identified in the scatter plot.
 
-![Dashboard](Images/Plant1.PNG)
+![Dashboard](Images/F1.PNG)
 
-![Dashboard](Images/Plant2.PNG)
+![Dashboard](Images/f2.PNG)
 
-![Dashboard](Images/Plant3.PNG)
+![Dashboard](Images/F3.PNG)
 
 
 ## Data Transformation
@@ -150,48 +150,26 @@ Here are the DAX formulas used in this project:
 
 ## Findings
 
-1. Plant Co. achieved a total YTD Sales revenue of $13.00M, which represents a $512K decrease compared to the previous year’s performance of $13.51M.
+1. 86.2% of all loans are "Good Loans" (Fully Paid or Current), totaling $370.2M in funded value.
 
-2. Despite the drop in revenue, the total Quantity sold actually increased by 17K units (556K vs 539K), suggesting a shift toward lower-priced products or a more aggressive discounting strategy.
+2. Most borrowers are highly stable, with 10+ years of employment history and living in rented or mortgaged homes.
 
-3. Gross Profit reached $5.15M with a consistent margin of 39.62%, though the total profit dollar value is down by $265K compared to the prior year.
+3. Debt Consolidation is by far the most common reason people apply for loans, followed by Credit Card payments.
 
-4. The Sales waterfall analysis identifies February and November as the most critical months of decline, where performance significantly deviated from the prior year's trends.
+4. There is a clear upward trend in loan applications from the start of the year toward the end (peaking in December).
 
-5. Product segmentation reveals that the 'Outdoor' category and 'Large' product sizes are the primary drivers of the year-over-year value gap, whereas 'Indoor' and 'Small' products remain high-volume anchors.
-
-6. The Account Profitability scatter plot indicates a high concentration of accounts below the 40% gross profit threshold, highlighting a major opportunity for margin optimization.
-
-7. Geographical data shows that while sales are distributed globally, the European and North American markets contribute the highest density of transaction volume.
-
-8. The 'Small' product size segment is the volume leader, moving 202K units, yet it does not generate enough revenue to offset the losses seen in the 'Large' product category.
-
-9. There is a clear disconnect between sales activity and profitability in specific mid-tier accounts, where high quantity sold is not translating into proportional gross profit growth.
-
-10. The 2023 fiscal year performance suggests that while market reach is expanding (higher unit sales), the company needs to re-evaluate its pricing architecture to recover lost revenue and profit margins.
+5. About 13.8% of loans are "Bad Loans" (Charged Off), which represents roughly $65.5M in total funded amount.
 
 
 ## Recommendations
 
-1. Launch a "Premium Recovery" campaign targeting the 'Large' product segment to reclaim the YTD profit deficit identified in the performance waterfall.
+1. Create marketing campaigns specifically for employees with 10+ years of experience, as they are your most active and reliable customers.
 
-2. Conduct a deep-dive pricing audit to determine if the 17K increase in unit volume is being undercut by excessive discounting or "loss leader" pricing strategies.
+2. Since this is the #1 loan purpose, offer a streamlined "Express" approval process for debt consolidation to capture more market share.
 
-3. Initiate a sales team review for the month of November to identify external market factors or internal process gaps that led to the significant recurring annual performance dip.
+3. Focus marketing spend on California (CA), Texas (TX), and New York (NY), as these states show the highest demand and volume.
 
-4. Implement a tiered account management strategy that prioritizes the high-volume/high-margin "Whale" accounts identified in the profitability scatter plot.
-
-5. Re-negotiate terms or adjust service levels for accounts currently falling in the "Low-Margin/High-Volume" quadrant to improve overall Gross Profit percentage.
-
-6. Develop a localized marketing push in the European and North American hubs to capitalize on existing high sales density and maximize economies of scale.
-
-7. Perform a "Product Mix Optimization" analysis to transition customers from lower-value 'Small' units into higher-margin 'Medium' or 'Large' alternatives.
-
-8. Establish an automated "Early Warning System" in Power BI that triggers alerts when monthly Gross Profit falls more than 5% below the Prior Year (PYTD) benchmark.
-
-9. Review supply chain and logistics costs associated with 'Outdoor' products to identify if rising operational expenses are the root cause of the profit decline in that category.
-
-10. Schedule quarterly "Profitability Workshops" with the regional sales heads to review the dashboard insights and align on specific targets for the upcoming quarter.
+4. Investigate the "60-month" loan terms more closely; longer terms often carry higher risks. Consider stricter credit requirements for 5-year loans.
 
 
 ## Challenges & Solution 
