@@ -26,27 +26,9 @@
 
 This project features a 3 page, interactive Power BI dashboard designed for Plant Co. to monitor global performance across three key business pillars: Sales, Quantity, and Gross Profit.
 
-The dashboard provides a detailed breakdown experience, allowing stakeholders to identify not just what happened in 2023, but why it happened by comparing Year-to-Date (YTD) performance against the Previous Year (PYTD).
+The dashboard provides a detailed breakdown experience, allowing stakeholders to identify not just what happened, but why it happened by comparing Month to Date (MTD) performance against the Month over Month (MoM).
 
-
-## Data Architecture 
-
-![DataModeling](Images/Data%20Modeling.PNG)
-
-This project is built on a Star Schema architecture, optimized for analytical performance, scalable reporting, and reliable DAX calculations in Power BI.
-
-- Fact Table: contains transactional sales data acting as a central table connecting all business dimensions with key metrics (Quantity, Sales, COGs). 
-
-- Plant_Products Table: This here contains the product attributes and hierarchy to help in analysis with product size, type, group e.t.c
-
-- Accounts Table: Contains customer and account information includes geographic and location for regional a nalysis.
-
-- Calendar Table: Created to help in time intelligence analysis. It helps in calculating YTD, PYTD and SAMEPERIODLASTYEAR.
-
-- Measures Table: This is not connected to other table but used for all DAX measures to help in reusability, readability.
-
-- Slic_Values: This is also diconnected from other tables. It helps in calculating dynamic slicers measures and a conditional measures.Also, this slicers is not connected intentionally as to be flexible.
-
+Developed a comprehensive Bank Loan Intelligence System that analyzes over $435M in loan data to monitor portfolio health and borrower risk. By visualizing key metrics like a 13.3% average DTI and identifying Debt Consolidation as the primary loan driver, this project provides actionable insights to improve lending strategies and maintain a 86.2% Good Loan rate.
 
 ### Benefit of data modeling
 
@@ -60,28 +42,39 @@ This project is built on a Star Schema architecture, optimized for analytical pe
 
 
 ## Questions
- Overall Performance & Growth: Is Plant Co. growing or shrinking?
 
-- How did our 2023 YTD Sales perform compared to the same period last year?What is the exact dollar value of our performance gap?
+- How is the overall loan portfolio performing? (Answered by the 86.2% Good Loan vs. 13.8% Bad Loan split).
 
-- Are we selling more but making less? Is our Gross Profit margin of stable, or has it eroded since the previous year?
+- What is the total financial exposure and recovery status? (Answered by the $435.8M Funded Amount vs. the $473.1M Total Amount Received).
 
-- Which customers are our Whales (High Volume/High Profit versus our Resource Drainers (High Volume/Low Profit)?
+- Are we maintaining a healthy profit margin? (Answered by the 12.0% Average Interest Rate compared to the volume of funded loans).
 
-- Which accounts are falling below our profitability threshold?
+- What is the average financial burden on our borrowers? (Answered by the 13.3% Average Debt-to-Income (DTI) ratio).
 
-- Which product segment is responsible for the largest profit decline?
+- Which loan types are most likely to fail? (Answered by the "Bad Loan" breakdown in the Summary dashboard).
 
-- We sold 17K more units this year—why didn't our revenue increase accordingly?
+- Are longer-term loans riskier than shorter ones? (Answered by the Term breakdown—36 months vs. 60 months—on the Overview page).
 
-- Which global regions are currently our strongest growth engines?
+- What is our "ideal" customer profile? (Answered by the Employment Length and Home Ownership charts).
 
-- In which specific months did we lose our momentum?
+- What are the primary drivers for people seeking credit? (Answered by the "Loan Purpose" chart, e.g., Debt Consolidation).
+
+- Does job stability correlate with loan volume? (Answered by the breakdown of applications from people with 10+ years of work history).
+
+- Is the demand for loans growing or shrinking? (Answered by the "Total Loan Applications by Month" line chart).
+
+- Where is our business geographically concentrated? (Answered by the "Loan Applications by State" map).
+
+- Are we seeing a month-over-month (MoM) improvement in collections? (Answered by the MoM percentage indicators on the Summary cards).
+
+- Which specific individuals or accounts require immediate follow-up? (Answered by the Details table, allowing managers to see specific loan statuses and payment dates).
+
+- How are different grades of loans (A, B, C, etc.) performing across the board? (Answered by the Grade and Sub-Grade filters in the detailed report).
 
 
 ## Data Source
 
-![Data](https://github.com/alabiibrahim/Plant-Co.-Global-Performance/blob/main/Datasets/Plant%20co.DTS.xls)
+![Data](https://github.com/alabiibrahim/Financial-Analysis/blob/main/Dataset/Financial%20Analysis.xls)
 
 ## Tools
 
@@ -92,8 +85,8 @@ This project is built on a Star Schema architecture, optimized for analytical pe
 
 ## Stages 
 - Load data to Power Query, Standardize data-types and remove duplicates.
-- Create a 'calendar' table and toggle button to view across 3 pillars of business. (Quantity, Sales and Gross Profit).
-- Data modeling. Create DAX measures. 
+- Create a custom 'slicer' as a toggle button to view across 2 pillars of business. (Good and Bad Loans), and to return "All" if slicer is cleared.
+- Wrote DAX measures to calculate for Dynamic report.
 
 
 ## Chart types and Why? 
