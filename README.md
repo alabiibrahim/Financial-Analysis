@@ -1,6 +1,6 @@
 # Financial-Analysis
 
-![GIF](Images/PlanGIF.gif)
+![GIF](Images/FinGIF.gif)
 
 ##   Table of Contents
 
