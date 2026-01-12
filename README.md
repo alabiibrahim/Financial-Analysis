@@ -91,17 +91,19 @@ Developed a comprehensive Bank Loan Intelligence System that analyzes over $435M
 
 ## Chart types and Why? 
 
-- Card Visuals - Shows the KPIs metrics (YTD, PYTD and GP%), and also the dynamic report title.
+- Card Visuals - Shows the KPIs metrics (Applications, Funded and Received amount, Avg DTI and Int Rate, MTD & MoM), and also the dynamic report title.
 
-- Scatter Charts - Shows accouint segmentation by GP % vs Sales. This allows stakeholders to identify high-volume, low-margin "risk" accounts versus high-margin "premium" accounts.
+- Table Charts - Shows the application, funded and received by loan purpose.
 
-- Waterfall charts - Shows the "YTD vs PYTD" comparison by Month, to provide a clear narrative of seasonal fluctuations.
+- Treemap - Shows the application, funded and received loans by home ownership.
 
-- Map - Shows the global YTD Sales, Quantity and GP %  by country, providing a spatial understanding of the company's market footprint.
+- Map - Used to depict the geo location of loan borrowers / applicants. 
 
-- Stacked Bar chart - Helps show the break down performance by product type (Indoor, Landscape, Outdoor).
+- Column Bar (Combo) - Shows the categorical distribution of loans by employment length.
 
-- Column chart - Display the breakdown performance by Product Size (Small, Medium, Large)
+- Bar - It display the categorical distribution of loan status between Charged off (Bad), Current and Fully Paid (Good).
+
+- Line - It is used to show the monthly trends of applications, funded, and received amount. 
 
 
 ## Dashboard
